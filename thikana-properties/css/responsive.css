@@ -1,0 +1,46 @@
+/* ============================================================
+   রেসপনসিভ লেয়ার — ব্রেকপয়েন্ট ও মোশন-প্রেফারেন্স
+   ============================================================ */
+
+@media (max-width: 1080px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero-vis { max-width: 560px; }
+  .fp, .pj-grid { grid-template-columns: 1fr; }
+  .fp.rev .fp-media { order: 0; }
+  .plan-wrap, .pj-cols, .pm-grid { grid-template-columns: 1fr; }
+  .chart-flex { grid-template-columns: 1fr; }
+  .proc { grid-template-columns: 1fr; gap: 26px; }
+  .visit-grid { grid-template-columns: 1fr; }
+  .ft-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 860px) {
+  nav.main { display: none; }
+  .h-phone span { display: none; }
+  .h-phone { padding: 0 14px; }
+  .h-dash { display: none; }
+  .nav-burger { display: grid; }
+  .pl-card, .pl-card.wide { grid-column: span 6; }
+  .gal { grid-template-columns: repeat(2, 1fr); }
+  .gal figure:nth-child(1), .gal figure:nth-child(6) { grid-column: span 2; }
+  .vf-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .pl-card, .pl-card.wide { grid-column: span 12; }
+  .h-search { grid-template-columns: 1fr; }
+  .h-search .fld { border-right: none; border-bottom: 1px solid var(--line-d); padding: 8px 6px; }
+  .hero { padding-bottom: 70px; }
+  .hero-stats { gap: 18px 26px; }
+  .ft-grid { grid-template-columns: 1fr; }
+  .chip-a { left: 2%; }
+  .chip-b { right: 2%; }
+  .pm-thumbs { grid-template-columns: repeat(3, 1fr); }
+  .slots { grid-template-columns: 1fr; }
+}
+
+/* মোশন-সংবেদনশীল ব্যবহারকারীদের জন্য */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .tk-track { animation: none; }
+}

@@ -1,0 +1,33 @@
+/* ============================================================
+   ঠিকানা Properties — ডিজাইন টোকেন
+   রঙ, ফন্ট-স্ট্যাক ও গ্লোবাল মাপ — শুধু এই ফাইলেই বদলান
+   ============================================================ */
+
+:root {
+  /* প্যালেট — জমির দাগ ও ধানখেত থেকে */
+  --ink: #101b14;        /* কালি */
+  --forest: #17362a;     /* বন-সবুজ */
+  --forest-2: #0d231a;   /* গাঢ় বন */
+  --moss: #2c5c44;       /* শ্যাওলা */
+  --cream: #f2ecdd;      /* হাতির কাগুজ */
+  --paper: #f9f6ee;      /* কাগজ */
+  --sand: #e8e0ca;       /* বালি */
+  --terra: #c25b2e;      /* টেরাকোটা (প্রাইমারি CTA) */
+  --terra-d: #9f451d;
+  --gold: #b58a2c;       /* পিতল */
+
+  --line: rgba(16, 27, 20, .15);
+  --line-d: rgba(242, 236, 221, .15);
+
+  --header-h: 74px;
+}
+
+/* ভাষাভেদে টাইপফেস */
+[data-lang="bn"] {
+  --font-display: 'Noto Serif Bengali', serif;
+  --font-body: 'Hind Siliguri', sans-serif;
+}
+[data-lang="en"] {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Archivo', sans-serif;
+}
