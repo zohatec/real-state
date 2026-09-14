@@ -1,0 +1,76 @@
+/* ============================================================
+   বেস লেয়ার — রিসেট, টাইপোগ্রাফি, সাধারণ ইউটিলিটি
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; font-size: inherit; background: none; border: none; color: inherit; cursor: pointer; }
+
+::selection { background: var(--gold); color: #fff; }
+:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; border-radius: 4px; }
+body.lock { overflow: hidden; }
+
+/* ফিল্ম-গ্রেইন টেক্সচার */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+/* আইকন — সব আইকন assets/icons.svg স্প্রাইট থেকে <use> হয় */
+.ic { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; flex: none; vertical-align: -3px; }
+.ic-f { fill: currentColor; stroke: none; }
+
+.wrap { max-width: 1220px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 48px); }
+
+/* সেকশন স্ক্যাফোল্ড */
+.sec { padding: clamp(64px, 9vw, 120px) 0; }
+.dark { background: var(--forest); color: var(--cream); }
+.bg-paper { background: var(--paper); }
+.bg-ink { background: var(--ink); color: var(--cream); }
+
+.sec-head { margin-bottom: clamp(34px, 4vw, 56px); }
+.sec-head h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 3.6vw, 3.1rem); font-weight: 700; line-height: 1.18; margin-top: 14px; letter-spacing: -.01em; }
+.sec-head p { max-width: 62ch; margin-top: 12px; opacity: .72; font-weight: 300; }
+
+.kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .78rem; font-weight: 600; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--gold);
+}
+.kicker::before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+
+/* স্ক্রল-রিভিল */
+.reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* বাটন */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: 13px; font-weight: 600; font-size: .98rem; transition: .25s; border: 1.5px solid transparent; }
+.btn-p { background: var(--terra); color: var(--cream); }
+.btn-p:hover { background: var(--terra-d); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(194, 91, 46, .32); }
+.btn-g { border-color: var(--line); color: inherit; }
+.btn-g:hover { border-color: currentColor; transform: translateY(-2px); }
+.dark .btn-g { border-color: var(--line-d); }
+.btn-wa { background: #1faa53; color: #fff; }
+.btn-wa:hover { background: #188f45; transform: translateY(-2px); }
+
+/* SPA ভিউ-ট্রানজিশন */
+main.view { animation: viewIn .55s cubic-bezier(.2, .7, .2, 1); }
+@keyframes viewIn { from { opacity: 0; transform: translateY(22px); } }
