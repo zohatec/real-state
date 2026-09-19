@@ -76,6 +76,7 @@ export function renderProjectPage(projectId) {
         <div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:4px">${t('amen_h')}</h3>
           <div class="amen">${p.amen.map((a) => `<span>${icon(a[0], 'width:16px;height:16px')}${esc(a[aIdx])}</span>`).join('')}</div>
+          <div class="tbl-x">
           <table class="ut">
             <thead><tr>${t('unit_th').map((h) => `<th>${h}</th>`).join('')}</tr></thead>
             <tbody>
