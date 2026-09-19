@@ -171,3 +171,11 @@
 .adm-empty .ic { width: 46px; height: 46px; stroke-width: 1.4; color: var(--moss); opacity: .5; margin: 0 auto 14px; display: block; }
 .adm-empty h3 { font-family: var(--font-display); font-size: 1.3rem; }
 .adm-empty p { opacity: .6; margin: 8px 0 20px; }
+/* ─── ইউনিট টেবিল: মোবাইলে নিজের বক্সেই স্ক্রল করবে ─── */
+.tbl-x {
+  overflow-x: auto;                   /* টেবিল এই বক্সের ভেতরেই স্ক্রল করবে */
+  -webkit-overflow-scrolling: touch;  /* আইফোনে মসৃণ টাচ-স্ক্রল */
+}
+.tbl-x .ut {
+  min-width: 560px;                   /* এর চেয়ে চেপে ছোট হবে না */
+}
