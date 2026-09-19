@@ -4,14 +4,15 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* নতুন লাইন — ভিউপোর্ট লেভেলে প্রয়োগ হবে */
+html { overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
   background: var(--cream);
   color: var(--ink);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;              /* আগে ছিল hidden → এখন clip */
   -webkit-font-smoothing: antialiased;
 }
 
