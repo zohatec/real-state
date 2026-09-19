@@ -27,6 +27,8 @@
 }
 
 @media (max-width: 620px) {
+  .ls-bar { grid-template-columns: 1fr; }   /* দুই কলাম স্ট্যাক হয়ে যাবে */
+  .seg { flex-wrap: wrap; }
   .pl-card, .pl-card.wide { grid-column: span 12; }
   .h-search { grid-template-columns: 1fr; }
   .h-search .fld { border-right: none; border-bottom: 1px solid var(--line-d); padding: 8px 6px; }
